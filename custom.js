@@ -1,15 +1,16 @@
-let accordion = document.getElementsByClassName('accordion')
-let i
+let question = document.getElementsByClassName('question');
+let answer = document.getElementsByClassName('answer');
 
-for (i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener('click', function () {
-      this.classList.toggle('active')
-  
-      let panel = this.nextElementSibling
-      if (panel.style.display === 'block') {
-        panel.style.display = 'none'
-      } else {
-        panel.style.display = 'block'
-      }
-    })
+for (let index = 0; index < question.length; index++){
+  question[index].addEventListener('click', drop); 
+
+  function drop() {
+    question[index].classList.toggle('active');
+
+    if (answer[index].style.display != 'block'){
+      answer[index].style.display = 'block';
+    } else {
+      answer[index].style.display = 'none';
+    }
   }
+}

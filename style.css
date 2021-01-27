@@ -1,42 +1,66 @@
 *{
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
 }
 body{
     background: linear-gradient(#a968ea, #6663e8);
     background-repeat: no-repeat;
     padding: 300px 200px;
 }
+.wrapper{
+    height: 100vh;
+}
 .card{    
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
+    grid-template-columns: 50% 50%;
     background-color: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.7);
-    max-width: 1200px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    max-width: 920px;
+    height: 70%;
 }
-
-.card img{
-    height: 350px;    
+.graphics {
+    border: 1px red solid;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
-
-.card-text{
+.overflow{
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+.transparent{
+    position: absolute;
+    top: -50%;
+    left: -10%;
+}
+.main{
+    position: absolute;
+    top: 20%;
+    left: -20%;
+}
+.box{
+    position: absolute;
+    top: 40%;
+    left: -20%;
+    z-index: 1;
+}
+.accordion{
     border: 1px black solid;
     display: flex;
     flex-direction: column;
     padding: 40px;
-    line-height: 2em;
+    line-height: 1.6em;
 }
 .question, .answer{
     font-size: 12px;
-    letter-spacing: .05rem;
+    letter-spacing: .03rem;
 }
 .question{
     /* border: 1px black solid; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
 }
 .question img{
@@ -47,11 +71,11 @@ body{
     cursor: pointer;
     color: #f47b56;
 }
-.question:active{
+.active p{
     color: black;
     font-weight: 600;
 }
-.question:active img{
+.active img{
     rotate: 180deg;
 }
 .horizontal-line{
@@ -59,4 +83,13 @@ body{
     height: 2px;
     background: #efefee;
     width: 100%;
+}
+.answer{
+    display: none;
+}
+
+@media (min-width: 100px) and (max-width: 575px){
+    .card {
+        grid-template-columns: 50%;
+    }
 }
