@@ -1,6 +1,6 @@
 *{
     margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
 body{
@@ -34,13 +34,14 @@ body{
     letter-spacing: .05rem;
 }
 .question{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 .question img{
     height: 10px;
+    margin: .8em;
 }
 .question:hover{
     cursor: pointer;
@@ -48,11 +49,14 @@ body{
 }
 .question:active{
     color: black;
-    font-weight: 700;
+    font-weight: 600;
+}
+.question:active img{
+    rotate: 180deg;
 }
 .horizontal-line{
     border: none;
     height: 2px;
-    background: #efefef;
+    background: #efefee;
     width: 100%;
 }
