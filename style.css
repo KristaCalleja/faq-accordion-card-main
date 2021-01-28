@@ -16,7 +16,7 @@ body{
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    max-width: 920px;
+    max-width: 1200px;
     height: 70%;
 }
 .graphics {
@@ -43,7 +43,7 @@ body{
 .box{
     position: absolute;
     top: 40%;
-    left: -20%;
+    left: -22%;
     z-index: 1;
 }
 .accordion{
@@ -88,8 +88,8 @@ body{
     display: none;
 }
 
-@media (min-width: 100px) and (max-width: 575px){
+@media (max-width: 575px){
     .card {
-        grid-template-columns: 50%;
+       grid-template-columns: 50%;
     }
 }
