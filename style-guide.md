@@ -1,3 +1,14 @@
+3 classes: 
+"collapse" - accordion closed
+    - display: none (if doesn't have show class)
+"collapsing" - opening/closing animation
+    - height of content set via JS on element (inline style)
+    - overflow hidden;
+    - height is 0;
+    - transition (time and method)
+
+"collapse show" - accordion opened
+
 # Front-end Style Guide
 
 ## Layout

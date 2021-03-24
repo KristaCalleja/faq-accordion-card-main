@@ -1,8 +1,17 @@
+:root{
+    --text-blue: hsl(238, 29%, 16%);
+    --text-red: #A9714B;
+    --divider-blue: hsl(240, 5%, 91%);
+}
+
 body{
-    margin: 0 auto;
+    margin: 0 ;
+    padding: 1rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(#a968ea, #6663e8);
+    background: linear-gradient(#D6E1CC, #C79C7F);
     font-size: 12px;
+    min-height: 100vh;
+    color: var(--text-blue);
 }
 .wrapper{
     display: flex;
@@ -10,92 +19,128 @@ body{
     align-items: center;
     height: 100vh;
 }
+
+/* MOBILE FIRST */
+
+/* Main image is woman online desktop */
+.graphics img{
+    /* Setting width and height auto will ensure it is responsive */
+    width: 100%;
+    height: auto;
+    max-width: 15rem;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: -6.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .card{    
-    display: flex;
-    flex-direction: row;
-    max-width: 920px;
-    background-color: #ffffff;
+    background-color: #F2F7F2;
     border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    max-width: 920px;
+    /* margin: 130px auto; */
+    /* Background image */
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-position: center -36%;
+    background-size: 15rem;
+    background-repeat: no-repeat;
+    
+}
+.card-box{
+    display: none;
+}
+.graphics{
+    position: relative;
 }
 .text{
     /* flex-basis: 520px; */
     display: flex;
     flex-direction: column;
     padding: 40px;
+    padding-top: 7rem;
 }
-.question{
+.accordion-item{
+    padding-top: 1rem ;
+    border-bottom: 1px solid var(--divider-blue);
+}
+.accordion-item h2{
+    margin-bottom: 0;
+}
+.accordion-question{
     display: flex;
-    align-items: baseline;
     justify-content: space-between;
-}
-.text img:only-of-type{
-    height: 10px;
-}
-/* .graphics {
-    border: 1px red solid;
-    position: relative;
-}
-.overflow{
-    overflow: hidden;
-    position: relative;
-}
-.transparent{
-    position: absolute;
-    top: -50%;
-    left: -10%;
-}
-.main{
-    position: absolute;
-    top: 20%;
-    left: -20%;
-}
-.box{
-    position: absolute;
-    top: 40%;
-    left: -22%;
-    z-index: 1;
-} */
-
-.question{
-    /* border: 1px black solid; */
-    display: flex;
-    /* justify-content: space-evenly; */
     width: 100%;
-}
-.question img{
-    /* margin: .8em; */
-}
-.question:hover{
-    cursor: pointer;
-    color: #f47b56;
-}
-.active p{
-    color: black;
-    font-weight: 600;
-}
-.active img{
-    rotate: 180deg;
-}
-.horizontal-line{
+    text-align: left;
     border: none;
-    height: 2px;
-    background: #efefee;
-    width: 100%;
+    background: transparent;
+    padding: 0;
+    font-size: 14px;
+    margin-bottom: 1rem;    
+    padding: 0 0 12px 0;
 }
-.answer{
-    display: none;
+.accordion-question::after{
+    content: '';
+    background-image: url(images/icon-arrow-down.svg);
+    background-size: contain;
+    display: flex;
+    justify-content: space-between;
+    background-position: center center;
+    width: 10px;
+    height: 1rem;
+    background-repeat: no-repeat;
 }
-@media (max-width: 375px){
+.accordion-question:hover{
+    color: var(--text-red);
+}
+.accordion-question.active{
+    font-weight: 700;
+}
+.accordion-content{
+    font-size: 14px;
+    line-height: 1.4;
+}
+h2{
+    margin-top: 0;
+
+}
+/* Desktop media queries */
+@media (min-width: 900px){
     .card{
-        flex-direction: column;
-        max-width: 320px;
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-size: 45%;
+        background-repeat: no-repeat;
+        background-position: -12% center;
+        padding: 70px 100px 70px 0;
+    }
+    .card-box{
+        display: block;
+        position: absolute;
+        top: 57%;
+        left: 0;
+        transform: translateX(-65%) translateY(-54%);
+        z-index: 1;
+    }
+    .graphics{
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+    .graphics img{
+        top: auto;
+        position: relative;
+        left: auto;
+        transform: translateX(-5rem);
+        max-width: 25rem;
+    }
+    .graphics, .text{
+        flex: 1;
     }
     .text{
-        max-width: 320px;
-    }
-    .text a:first-child{
-        text-align: center;
+        padding-top: 0;
     }
     
 }

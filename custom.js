@@ -1,5 +1,7 @@
-let question = document.getElementsByClassName('question');
-let answer = document.getElementsByClassName('answer');
+// console.log('test');
+
+let question = document.getElementsByClassName('accordion-question');
+let answer = document.getElementsByClassName('accordion-content');
 
 for (let index = 0; index < question.length; index++){
   question[index].addEventListener('click', drop); 
