@@ -1,4 +1,3 @@
-// console.log('test');
 
 let question = document.getElementsByClassName('accordion-question');
 let answer = document.getElementsByClassName('accordion-content');
