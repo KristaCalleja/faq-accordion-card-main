@@ -99,6 +99,7 @@ body{
 .accordion-content{
     font-size: 14px;
     line-height: 1.4;
+    display: none;
 }
 h2{
     margin-top: 0;
